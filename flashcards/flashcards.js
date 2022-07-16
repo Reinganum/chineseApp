@@ -848,7 +848,7 @@ function hacerLogout(){
         if (result.isConfirmed) {
             window.localStorage.removeItem('token');
             window.localStorage.removeItem('userLogged');
-            window.location.assign('https://google.com');
+            window.location.assign('../index.html');
         }
       })
 }
