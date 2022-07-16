@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="flashcards.css">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <title>App de Chino</title>
+</head>
+<body>
+    <div id="userContent" class="userContent">
+        <div id="userImg"></div>
+        <div id='containerAvatarBtn'>
+            <ion-icon id='avatarBtn' size="large" name="person-add-outline"></ion-icon>
+        </div>
+        <div id="infoUser">
+            <h2 class="centrado">Bienvenid@</h2>
+            <h2 id="nombreUsuario"></h2>
+            <h4>usuario creado el:</h4>
+            <h4 id="usuarioCreado"></h4>
+            <h4>últimos caracteres estudiados</h4>
+            <div id="estudiadosRecientes">
+            </div>
+            <h4>porcentaje aciertos</h4>
+            <h1 id="aciertos">100%</h4>
+            </div>
+            <div class="logout" id="logout">
+                <h3>Logout</h3>
+                <ion-icon size='large' name="log-out-outline"></ion-icon>
+            </div>
+        </div>
+    </div>
+    <div id="mainContent" class="mainContent">
+        <div id="menuEntrada" class="menuEntrada">
+            <ul>
+                <li><button id="menuBtn1" class="menuBtn">Flashcards</li>
+                <li><button id="menuBtn2" class="menuBtn">Mi Lista</li>
+                <li><button id="menuBtn3" class="menuBtn">Diccionario</li>
+                <li><button id="menuBtn4" class="menuBtn">Memorice</li>
+            </ul>
+        </div>
+        <div id="containerSeccionFC" class="containerSeccionFC hidden">
+            <div>
+                <h1 class="titulo">Escoge el vocabulario que quieres estudiar o escoge practicar si quieres poner a prueba tu memoria</h1>
+                <ul id="categorias">
+                    <li><input type="checkbox" value="numeros" class="checkbox">
+                    <label for="numeros">Numeros</label></li>
+                    <li><input type="checkbox" value="familia" class="checkbox">
+                    <label for="familia">Familia</label></li>
+                    <li><input type="checkbox" value="animales" class="checkbox">
+                    <label for="animales">Animales</label></li>
+                    <li><input type="checkbox" value="pronombres" class="checkbox">
+                    <label for="pronombres">Pronombres</label></li>
+                    <li><input type="checkbox" value="presente" class="checkbox" id="checkbox">
+                    <label for="miLista">Mi lista</label><ion-icon id="pregunta" class='pregunta' name="help-circle-outline"></ion-icon></li>
+                    <li><input type="checkbox" class="checkbox" id="checkAll">
+                    <label for="checkAll">Todos</label></li>
+                </ul>
+                <div id="containerFlashcard" class="containerFlashcard">
+                    <div id="flashcard" class="flashcard">
+                        <ion-icon id="pregunta1" class='pregunta' size="large" name="help-circle-outline"></ion-icon>
+                        <ion-icon id="pregunta2" class='pregunta'size="large" name="help-circle-outline"></ion-icon>
+                        <p id="caracter"><p>
+                        <p id="pronunciacion"><p>
+                        <p id="significado"><p>
+                    </div>
+                </div>
+                <div id="containerBtns" class="containerBtns">
+                    <button id="estudiarBtn">Estudiar</button>
+                    <button id="practicarBtn">Practicar</button>
+                    <button id="resetBtn">Reset</button>
+                </div>
+                <div id="return1" class='containerIcon return'>
+                    <ion-icon size="large" name="play-skip-back-circle-outline"></ion-icon>
+                    <h4>menu</h4>
+                </div>
+            </div>
+        </div>
+        <div id="containerBuscador" class="containerBuscador hidden">
+            <h1 class="titulo">busca palabras</h1>
+            <h2 class="subtitulo">puedes armar una lista personalizada de estudio</h2>
+            <input id="busqueda" class="busqueda" type="search">
+            <div id="resultados"></div>
+            <div class='containerIcon return'>
+                <ion-icon id="return" size="large" name="play-skip-back-circle-outline"></ion-icon>
+                <h4>menu</h4>
+            </div>
+        </div>
+        <div id="buscadorAPI" class="buscadorAPI hidden">
+            <h1 class="titulo centrado">Buscar palabras en base de datos externa (en inglés)</h1>
+            <input id="busquedaAPI" class="busqueda" type="search" maxlength="15">
+            <div class="contenedorRadio">
+                <input type="radio" name="criterio" value="pron" checked><label>pīnyīn</label>
+                <input type="radio" name="criterio" value="sig"><label>definición</label>
+                <input type="radio" name="criterio" value="car"><label>caracter</label>
+            </div>
+            <button id="btnAPISearch" class="btnBuscar">Buscar</button>
+            <div id="resultadosAPI"></div>
+            <div class='containerIcon return'>
+                <ion-icon id="return" size="large" name="play-skip-back-circle-outline"></ion-icon>
+                <h4>menu</h4>
+            </div>
+        </div>
+        <div id="containerMemorice" class="containerMemorice hidden">
+            <h3>Tienes dos minutos para encontrar 12 pares de caracteres generados al azar desde el diccionario</h3>
+            <button id="jugarBtn"> Comenzar Juego!</button>
+            <div class='containerIcon return' id="returnMem">
+                <ion-icon size="large" name="play-skip-back-circle-outline"></ion-icon>
+                <h4>menu</h4>
+            </div>
+        </div>
+        <div class="score-timer hidden" id="containerJuegoMem">
+            <div class='containerIcon return memorice'>
+                <ion-icon id="return" size="large" name="play-skip-back-circle-outline"></ion-icon>
+                <h4>menu</h4>
+            </div>
+            <h3 id="puntaje">Tu puntaje:</h3>
+            <span id="result">0</span>
+            <p id="timer"></p>
+            <div id="gridMemorice"></div>
+        </div>
+    </div>
+    <script src="/flashcards/init.js"></script>
+    <script src= "/npm/sweetalert2@11.4.23/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="diccionario.js"></script>
+    <script src="flashcards.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

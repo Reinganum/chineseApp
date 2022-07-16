@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Login</title>
+</head>
+<body>
+    <div id="container-flex">
+        <div id="img">
+            <h1 id="titulo">欢迎来到我学习中文的应用！</h1>
+        </div>
+        <div id="form">
+            <div class="user-form">
+                <div id="create-account">
+                    <h1 class="title">Crear cuenta</h1>
+                    <input type="text" id="createUser" placeholder="Usuario" autofocus maxlength="15"><br>
+                    <input type="password" id="createPass" placeholder="Password" maxlength="15"><br>
+                    <div id="requisitos">
+                        <h5>al menos 8 caracteres con mayúsculas y un caracter especial (~!@#$%^&*)</h5>
+                        </div>
+                    <input type="email" id="createEmail" placeholder="Miemail@mail.com"><br>
+                    <button id="createUserBtn">Crear usuario</button><br>
+                </div>
+                <form id="log-account" class="log-account hidden" action="/flashcards/flashcards.html">
+                    <h1>Ingresa a tu cuenta</h1><br>
+                    <input type="text" placeholder="Usuario" id="checkUser" maxlength="15" minlength="5"><br>
+                    <input type="password" placeholder="Password" id="checkPass" maxlength="15" minlength="5"><br>
+                    <button id="loginBtn">ingresar</button>
+                </form>
+            </div>
+            <div id="recoverForm" class="recover hidden">
+                <h1>Ingrese correo al que enviaremos su password</h1><br>
+                <input type="mail"><br>
+                <button>Enviar clave</button>
+            </div>
+            <div class="extras" >
+                <a href="#" id="alreadyHave">Ingresar a mi cuenta</a>
+                <a href="#" id="dontHave" class="hidden">Quiero crear una cuenta</a>
+                <a href="#" id="recover">Recuperar contraseña</a>
+            </div>
+        </div>
+    </div>
+    <script src= "/npm/sweetalert2@11.4.23/dist/sweetalert2.all.min.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

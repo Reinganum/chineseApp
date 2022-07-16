@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
+* {
+    margin: 0;
+    padding: 0; }
+  
+  html {
+    font-size: 62,5%;
+    height: 100%; }
+
+    body{
+        background-color: black;
+    }
+    
+#container-flex{
+    display: flex;
+    outline: 2px solid black;
+    width: 80vw;
+    height: 78vh;
+    margin: auto;
+    margin-top: 4rem;
+    border-radius: 12px 0 0 12px;
+}
+
+#img{
+    background-image: url(./ilustracionChina.webp);
+    width: 60%;
+    border-radius: 12px 0 0 12px;
+}
+
+#titulo{
+    margin: auto;
+    background-color: azure;
+    opacity: 0.8;
+    margin-top: 2rem
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    background-color: orange;
+    width: 40%;
+    text-align: center;
+    height: 78vh;
+}
+
+#recoverForm{
+    margin: auto;
+}
+
+.title{
+    margin-top: 20%;
+}
+
+.hidden{
+    display: none;
+}
+
+
+h1{
+    text-align: center;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-size: 2rem;
+}
+.user-form{
+    height: 70vh;
+}
+
+.user-form input{
+    margin: auto;
+    margin-top: 1rem;
+}
+
+button{
+    inline-size: 10rem;
+    margin: auto;
+    margin-top: 1rem;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    background-color: orangered;
+    padding: 1rem;
+    border-radius: 24px;
+    border: none;
+}
+
+input{
+    border: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: white(193, 188, 188);
+    padding: 12px;
+    width: 250px;
+    outline-color: rgb(101, 192, 232);
+}
+
+#recoverForm button{
+    inline-size: 10rem;
+}
+
+.extras{
+    display: flex;
+    justify-content: center;
+}
+
+.extras a{
+    margin: 1rem;
+    color: black;
+    text-decoration: none;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    background-color: orangered;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    border-radius: 24px;
+    margin-bottom: 30%;
+}
+
+#requisitos{
+    display: none;
+}
+
+#createPass:focus ~ #requisitos {
+    display: block;
+}
