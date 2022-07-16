@@ -399,7 +399,7 @@ button{
 #userImg{
     height: 200px;
     width: 200px;
-    background-image: url(/flashcards/user.jpg);
+    background-image: url(../flashcards/user.jpg);
     background-size: contain;
     margin: auto;
     border-radius: 50%;

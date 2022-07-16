@@ -148,6 +148,7 @@ boton.addEventListener('click',()=>{
     contBuscadorAPI.style.display='none';
     containerMemorice.style.display='none';
     containerJuegoMem.style.display='none';
+    pararReloj();
 })}
 
 // ARRAY CLASIFICA PALABRAS SEGUN CATEGORIA SELECCIONADA //
@@ -739,7 +740,6 @@ function pararReloj(){
 
 function segundosJuego(){
     contadorSegundos++;
-    console.log(contadorSegundos)
 }
 
 jugarBtn.addEventListener('click', ()=>{
