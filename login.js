@@ -184,7 +184,6 @@ loginBtn.addEventListener('click',hacerLogin);
 const recoveryLink = document.getElementById("recover");
 const recoverForm = document.getElementById("recoverForm");
 const inputRecover= document.getElementById("inputRecover");
-alreadyHaveAccLink.addEventListener('click',GoToLogin)
 recoveryLink.addEventListener('click', ShowRecovery);
 
 const ShowRecovery = function() {
@@ -208,6 +207,7 @@ const GoToLogin = ()=>{
 
 }
 
+alreadyHaveAccLink.addEventListener('click',GoToLogin)
 dontHaveAcc.addEventListener('click', function(){
     document.getElementById("log-account").setAttribute('class','hidden');
     document.getElementById("create-account").removeAttribute('class','hidden');
