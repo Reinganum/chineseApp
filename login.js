@@ -184,8 +184,6 @@ loginBtn.addEventListener('click',hacerLogin);
 const recoveryLink = document.getElementById("recover");
 const recoverForm = document.getElementById("recoverForm");
 const inputRecover= document.getElementById("inputRecover");
-recoveryLink.addEventListener('click', ShowRecovery);
-
 const ShowRecovery = function() {
     recoverForm.removeAttribute('class','hidden');
     document.getElementById("log-account").setAttribute('class','hidden');
@@ -194,8 +192,8 @@ const ShowRecovery = function() {
     document.getElementById("dontHave").removeAttribute('class','hidden');
     recoveryLink.setAttribute('class','hidden');
 };
-
-const GoToLogin = ()=>{
+recoveryLink.addEventListener('click', ShowRecovery);
+const goToLogin = ()=>{
     document.getElementById("log-account").removeAttribute('class','hidden');
     document.getElementById("create-account").setAttribute('class','hidden');
     document.getElementById("dontHave").removeAttribute('class','hidden');
@@ -207,7 +205,7 @@ const GoToLogin = ()=>{
 
 }
 
-alreadyHaveAccLink.addEventListener('click',GoToLogin)
+alreadyHaveAccLink.addEventListener('click', goToLogin)
 dontHaveAcc.addEventListener('click', function(){
     document.getElementById("log-account").setAttribute('class','hidden');
     document.getElementById("create-account").removeAttribute('class','hidden');
