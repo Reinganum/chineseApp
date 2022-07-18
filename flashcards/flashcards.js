@@ -461,7 +461,7 @@ campoBusqueda.addEventListener('input', ()=>{
         let resultado=arrFlashCards.filter(flashcard=>campoBusqueda.value.indexOf(flashcard.caracter)!==-1);
         displayResultados(resultado);
     } else if (campoBusqueda.value.length>1){
-        let resultado=arrFlashCards.filter(flashcard=>(flashcard.significado).includes(campoBusqueda.value)===true);
+        let resultado=arrFlashCards.filter(flashcard=>(flashcard.significado).includes(campoBusqueda.value.toLowerCase())===true);
         displayResultados(resultado);
         }
 });
@@ -621,15 +621,14 @@ while (arrCartasMemorice.length<24){
     let index = (Math.floor(Math.random() * arrFlashCards.length))
     if(arrCartasMemorice.indexOf(arrFlashCards[index])===-1){
         arrCartasMemorice.push(arrFlashCards[index]);
-        arrCartasMemorice.push(arrFlashCards[index]);
-    } else {
-        console.log('caracter repetido');
+        arrCartasMemorice.push(arrFlashCards[index]);   
     }
 }
 
 // CREAR TABLERO //
 
 function crearTablero() {
+    arrCartasMemorice.sort(()=>0.5 - Math.random());
     for (let i = 0; i < arrCartasMemorice.length;i++) {
         const carta = document.createElement('div')
         carta.setAttribute('class','flashcardMemorice')
@@ -640,8 +639,8 @@ function crearTablero() {
     }
 }
 
-arrCartasMemorice.sort(()=>0.5 - Math.random());
-console.log(arrCartasMemorice);
+
+
 
 // VOLTEAR CARTA //
 

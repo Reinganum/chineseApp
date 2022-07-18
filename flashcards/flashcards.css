@@ -1,17 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
 
-body{
-    margin: 0;
-    display: grid;
-    grid-template-areas: "user main main main main";
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    position: relative;
-    background: #1e1e24;
-    align-items: center;
-    justify-content: center;
-}
+/* clases globales */
 
 li{
     list-style: none;
@@ -28,6 +17,21 @@ button{
     border: none;
 }
 
+/* grid layout seccion usuario seccion main*/ 
+
+body{
+    margin: 0;
+    display: grid;
+    grid-template-areas: "user main main main main";
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    background: #1e1e24;
+    align-items: center;
+    justify-content: center;
+}
+
 .userContent{
     grid-area: "user";
     height: 98vh;
@@ -41,6 +45,106 @@ button{
     width: 78vw;
     background-color: black;
 }
+/* info seccion user */
+
+#userImg{
+    height: 200px;
+    width: 200px;
+    background-image: url(../flashcards/user.jpg);
+    background-size: contain;
+    margin: auto;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.centrado{
+    text-align: center;
+}
+#infoUser{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#nombreUsuario{
+    color: white;
+}
+
+#usuarioCreado{
+    color: white;
+}
+
+#contenedorRecientes{
+    display: flex;
+}
+
+#estudiadosRecientes{
+    display: grid;
+    grid-template-columns: repeat(5,60px);
+    color: white;
+    margin-left: 30px;
+    background-color: rgb(3, 3, 30);
+    padding-left: 35px;
+}
+
+#panelInfo{
+    position: absolute;
+    background-color: orange;
+    width: 10vw;
+    height: 20vh;
+    color: black;
+    margin-left: 18vw;
+    border-radius: 0 24px 24px 0;
+    font-weight: bold;
+    border-style: line;
+    border-color: black;
+    text-align: center;
+}
+
+#avatarBtn{
+    position: relative;
+    margin-left: 15rem;
+    margin-top: -2rem;
+    background-color: orange;
+    border-radius: 50%;
+ }
+ 
+ #logout{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: white;
+     background-color: orange;
+ }
+ 
+ #infoUser{
+     background-color: orangered;
+     border-radius: 24px 24px 0px 0px;
+     font-family: 'Kdam Thmor Pro', sans-serif;
+ }
+ 
+ 
+ #infoUser, h2{
+     line-height: 1rem;
+ }
+
+ #containerPerfiles{
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3,80px);
+    margin-left: 260px;
+    margin-top: -20px;
+    padding: 1rem;
+    background-color: beige;
+    border-radius: 0px 24px 24px 24px;
+}
+
+.containerImg{
+    background-size: contain;
+    width: 80px;
+    height: 80px;
+}
+/* hover informacion flashcards */
 
 .pregunta{
     float:right;
@@ -53,17 +157,40 @@ button{
     margin-top: 10px ;
 }
 
-#menuEntrada{
-    display: flex;
-    width: 30vw;
-    height: 60vh;
-    margin: auto;
-    margin-top: 10%;
-    background-color: blueviolet;
-    border-radius: 24px;
-    min-width: min-content;
-    align-items: center;
-    justify-content: center;
+#pregunta{
+    margin-right: 87%;
+}
+
+#infoTonosUno{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    background-color: rgba(7, 2, 16, 0.9);
+    color: white;
+    margin-left: 290px;
+    margin-top: 70px;
+    padding: 1rem;
+    border-radius: 0px 24px 24px 24px;
+}
+#infoTonosUno li{
+    padding: 8px;
+    list-style: circle;
+}
+
+#infoTonosDos{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    background-color: rgba(59, 129, 59,0.9);
+    color: white;
+    margin-left: 290px;
+    margin-top: 70px;
+    padding: 1rem;
+    border-radius: 0px 24px 24px 24px;
+}
+#infoTonosUno li{
+    padding: 8px;
+    list-style: circle;
 }
 
 .pinyin{
@@ -72,8 +199,18 @@ button{
     justify-content: center;
 }
 
-.menuBtn{
-    margin-right: 40px;
+
+#categorias{
+    display: flex;
+    flex-direction: column;
+}
+
+#categorias p{
+    background-color: rgba(59, 129, 59);
+    text-align: center;
+    padding: 0.5rem;
+    border-style: dashed;
+    font-weight: bolder;
 }
   
 .containerSeccionFC{
@@ -127,23 +264,6 @@ button{
     color: white;
 }
 
-#containerPerfiles{
-    position: absolute;
-    display: grid;
-    grid-template-columns: repeat(3,80px);
-    margin-left: 260px;
-    margin-top: -20px;
-    padding: 1rem;
-    background-color: beige;
-    border-radius: 0px 24px 24px 24px;
-}
-
-.containerImg{
-    background-size: contain;
-    width: 80px;
-    height: 80px;
-}
-
 #caracter{
     text-align: center;
     font-size: 4rem;
@@ -173,6 +293,8 @@ button{
     border-radius: 12px;
 }
 
+/* ESTILOS BUSCADOR */
+
 .busqueda{
     width: 20rem;
     line-height: 1.5rem;
@@ -183,50 +305,7 @@ button{
 .containerBtns{
     display: flex;
 }
-#categorias{
-    display: flex;
-    flex-direction: column;
-}
 
-#categorias p{
-    background-color: rgba(59, 129, 59);
-    text-align: center;
-    padding: 0.5rem;
-    border-style: dashed;
-    font-weight: bolder;
-}
-
-#infoTonosUno{
-    width: 200px;
-    height: 300px;
-    position: absolute;
-    background-color: rgba(7, 2, 16, 0.9);
-    color: white;
-    margin-left: 290px;
-    margin-top: 70px;
-    padding: 1rem;
-    border-radius: 0px 24px 24px 24px;
-}
-#infoTonosUno li{
-    padding: 8px;
-    list-style: circle;
-}
-
-#infoTonosDos{
-    width: 200px;
-    height: 300px;
-    position: absolute;
-    background-color: rgba(59, 129, 59,0.9);
-    color: white;
-    margin-left: 290px;
-    margin-top: 70px;
-    padding: 1rem;
-    border-radius: 0px 24px 24px 24px;
-}
-#infoTonosUno li{
-    padding: 8px;
-    list-style: circle;
-}
 #resultados{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px,1fr));
@@ -283,6 +362,8 @@ button{
     justify-content: center;
     margin-top: 1rem;
 }
+
+/* ESTILOS MEMORICE */
 
 #gridMemorice{
     margin: auto;
@@ -392,63 +473,6 @@ button{
      text-align: center;
      font-weight: bold;
  }
- 
- 
-/* ESTILOS DE BARRA DE USUARIO */
-
-#userImg{
-    height: 200px;
-    width: 200px;
-    background-image: url(../flashcards/user.jpg);
-    background-size: contain;
-    margin: auto;
-    border-radius: 50%;
-    margin-top: 10px;
-}
-
-.centrado{
-    text-align: center;
-}
-#infoUser{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-#nombreUsuario{
-    color: white;
-}
-
-#usuarioCreado{
-    color: white;
-}
-
-#contenedorRecientes{
-    display: flex;
-}
-
-#estudiadosRecientes{
-    display: grid;
-    grid-template-columns: repeat(5,60px);
-    color: white;
-    margin-left: 30px;
-    background-color: rgb(3, 3, 30);
-    padding-left: 35px;
-}
-
-#panelInfo{
-    position: absolute;
-    background-color: orange;
-    width: 10vw;
-    height: 20vh;
-    color: black;
-    margin-left: 18vw;
-    border-radius: 0 24px 24px 0;
-    font-weight: bold;
-    border-style: line;
-    border-color: black;
-    text-align: center;
-}
 
 .containerJuegoMem{
     display: flex;
@@ -487,33 +511,21 @@ button{
     display: none;
 }
 
-#avatarBtn{
-   position: relative;
-   margin-left: 15rem;
-   margin-top: -2rem;
-   background-color: orange;
-   border-radius: 50%;
-}
+/* ESTILOS BARRA MENU */
 
-#logout{
+#menuEntrada{
     display: flex;
-    justify-content: center;
+    width: 30vw;
+    height: 60vh;
+    margin: auto;
+    margin-top: 10%;
+    background-color: blueviolet;
+    border-radius: 24px;
+    min-width: min-content;
     align-items: center;
-    color: white;
-    background-color: orange;
+    justify-content: center;
 }
 
-#pregunta{
-    margin-right: 87%;
-}
-
-#infoUser{
-    background-color: orangered;
-    border-radius: 24px 24px 0px 0px;
-    font-family: 'Kdam Thmor Pro', sans-serif;
-}
-
-
-#infoUser, h2{
-    line-height: 1rem;
+.menuBtn{
+    margin-right: 40px;
 }
