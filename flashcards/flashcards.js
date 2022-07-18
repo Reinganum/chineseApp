@@ -543,6 +543,7 @@ btnAPISearch.addEventListener('click', ()=>{
                         pintar(dato);
                     })
                 })
+                .catch(alert("no se pudo conseguir los datos"));
         }
         getDatosPron();
     }else if (criterio[0].value === 'sig') {
@@ -558,6 +559,7 @@ btnAPISearch.addEventListener('click', ()=>{
                         pintar(dato);
                     })
                 })
+                .catch(alert("no se pudo conseguir los datos"));
         }
         getDatosPron();
     } else if (criterio[0].value === 'car'){
@@ -575,6 +577,7 @@ btnAPISearch.addEventListener('click', ()=>{
                         })
                     })
                 })
+                .catch(alert("no se pudo conseguir los datos"));
         }
         getDatosPron();
     }
